@@ -1,0 +1,67 @@
+{
+  "asOf": "2026-06-05T14:00:00Z",
+  "portfolio": "US equities market-making",
+  "riskToleranceScore": 62,
+  "lanes": [
+    {
+      "venue": "NYSE Arca",
+      "strategy": "ETF stat arb",
+      "region": "US-NY4",
+      "p50Micros": 82,
+      "p99Micros": 640,
+      "jitterMicros": 118,
+      "packetLossBps": 7,
+      "staleQuoteEvents": 14,
+      "ordersAtRisk": 93000,
+      "dailyNotionalUsd": 186000000,
+      "owner": "Low-latency engineering",
+      "control": "kernel-bypass NIC path",
+      "nextAction": "Move quote cancel path to hot standby feed handler."
+    },
+    {
+      "venue": "Nasdaq OUCH",
+      "strategy": "index rebalance",
+      "region": "US-Carteret",
+      "p50Micros": 55,
+      "p99Micros": 285,
+      "jitterMicros": 42,
+      "packetLossBps": 2,
+      "staleQuoteEvents": 3,
+      "ordersAtRisk": 31000,
+      "dailyNotionalUsd": 94000000,
+      "owner": "Market data reliability",
+      "control": "redundant multicast plant",
+      "nextAction": "Keep current controls; verify feed gap alert thresholds."
+    },
+    {
+      "venue": "CME Globex",
+      "strategy": "futures hedge",
+      "region": "Aurora",
+      "p50Micros": 104,
+      "p99Micros": 910,
+      "jitterMicros": 166,
+      "packetLossBps": 12,
+      "staleQuoteEvents": 23,
+      "ordersAtRisk": 128000,
+      "dailyNotionalUsd": 242000000,
+      "owner": "Execution risk",
+      "control": "hedge route failover",
+      "nextAction": "Isolate packet-loss source before next rebalance window."
+    },
+    {
+      "venue": "Cboe BYX",
+      "strategy": "liquidity capture",
+      "region": "US-NY5",
+      "p50Micros": 73,
+      "p99Micros": 410,
+      "jitterMicros": 88,
+      "packetLossBps": 5,
+      "staleQuoteEvents": 9,
+      "ordersAtRisk": 62000,
+      "dailyNotionalUsd": 117000000,
+      "owner": "Smart order routing",
+      "control": "venue health circuit breaker",
+      "nextAction": "Tighten venue suppression when p99 exceeds strategy tolerance."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+site/
+target/
+.pytest_cache/
+__pycache__/
+*.pyc
+*.tmp

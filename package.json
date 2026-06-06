@@ -1,0 +1,75 @@
+{
+  "name": "hft-latency-risk-ledger",
+  "version": "0.1.0",
+  "description": "Board-ready HFT latency risk ledger for venue latency, jitter, packet loss, and recoverable execution exposure.",
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "author": "mizcausevic-dev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizcausevic-dev/hft-latency-risk-ledger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mizcausevic-dev/hft-latency-risk-ledger/issues"
+  },
+  "homepage": "https://github.com/mizcausevic-dev/hft-latency-risk-ledger#readme",
+  "keywords": [
+    "hft",
+    "latency",
+    "fintech",
+    "risk-ledger",
+    "market-structure",
+    "rust",
+    "python",
+    "board-ready",
+    "kinetic-gain"
+  ],
+  "bin": {
+    "hft-latency-risk-ledger": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "demo": "tsx scripts/run_demo.ts",
+    "prerender": "tsx scripts/prerender.ts",
+    "smoke": "tsx scripts/smoke_check.ts",
+    "rust:test": "cargo test --manifest-path crates/hft-ledger-cli/Cargo.toml",
+    "rust:demo": "cargo run --quiet --manifest-path crates/hft-ledger-cli/Cargo.toml -- fixtures/hft-latency-sample.json --format json",
+    "python:test": "python -m unittest discover -s python/tests",
+    "python:demo": "python python/hft_latency_ledger/pack.py fixtures/hft-latency-sample.json --format markdown",
+    "verify": "npm run lint && npm run typecheck && npm run coverage && npm run build && npm run demo && npm run prerender && npm run smoke && npm run rust:test && npm run python:test",
+    "render:assets": "powershell -ExecutionPolicy Bypass -File .\\scripts\\render_readme_assets.ps1",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.10.0",
+    "@types/supertest": "^6.0.3",
+    "@vitest/coverage-v8": "^4.1.8",
+    "eslint": "^9.17.0",
+    "globals": "^16.5.0",
+    "supertest": "^7.1.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^4.1.8"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
