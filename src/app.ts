@@ -157,7 +157,38 @@ export function renderPage(input: LatencyLedgerInput): string {
         <p>Demo fixtures are synthetic and credential-free; the pattern is reusable for real diligence packets without exposing customer or regulated data.</p>
       </article>
     </section>
-    <footer>Primary recommendation: ${ledger.primaryRecommendation}</footer>
+    <section class="proof-pack" aria-label="Product depth and shared pattern">
+      <article class="proof-card">
+        <small>Product purpose</small>
+        <h2>What this product does</h2>
+        <p>A board-ready latency evidence ledger for trading venues where p99 latency, jitter, packet loss, stale quotes, and notional exposure need to be understood by risk, technology, and investment leadership at the same time.</p>
+      </article>
+      <article class="proof-card">
+        <small>Go-to-market lens</small>
+        <h2>Why buyers would care</h2>
+        <p>For portfolio and fintech buyers, the page explains where execution quality can become revenue leakage, regulatory concern, or customer trust risk.</p>
+      </article>
+      <article class="proof-card">
+        <small>Value architecture</small>
+        <h2>How it turns into action</h2>
+        <p>It turns market-structure telemetry into ranked remediation: which venue needs containment, which owner is accountable, and how much execution exposure is at stake.</p>
+      </article>
+      <article class="proof-card">
+        <small>Technical proof</small>
+        <h2>How reviewers can trust it</h2>
+        <p>The proof stays inspectable through typed scoring, synthetic fixtures, CLI output, an app route, static prerendering, and a sitemap.</p>
+      </article>
+      <article class="proof-card">
+        <small>What these repos have in common</small>
+        <h2>Platform complexity becomes board-ready operating proof.</h2>
+        <p>Each repo names a buyer pain, exposes an evidence model, produces a reusable artifact, and keeps the public page safe with synthetic data instead of credentials or customer exports.</p>
+      </article>
+      <article class="proof-card">
+        <small>Interlinks</small>
+        <h2>Where this fits</h2>
+        <p><a href="https://portfolio.kineticgain.com/">Portfolio</a> · <a href="https://kineticgain.com/">Kinetic Gain</a> · <a href="https://github.com/mizcausevic-dev/hft-latency-risk-ledger">GitHub</a></p>
+      </article>
+    </section><footer>Primary recommendation: ${ledger.primaryRecommendation}</footer>
   </main>
 </body>
 </html>`;
